@@ -1,0 +1,8 @@
+.masthead {
+    background-image: url('../img/header.jpg')!important;
+    background-repeat: no-repeat!important;
+  }
+
+.masthead-subheading {
+    color: green;
+}
