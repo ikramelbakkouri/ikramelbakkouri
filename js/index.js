@@ -48,8 +48,10 @@ $.getJSON(url1, function(data1) {
 function getActualWeight(name, data) {
     let value;
     $.each(data.feed.entry, function(index, entry) {
-        if (entry['gsx$الإسم']['$t'].toLowerCase() === name.toLowerCase()) {
+        if (entry['gsx$الإسم']['$t'].trim().toLowerCase() === name.trim().toLowerCase()) {
+            
             value = entry['gsx$الوزنبkg']['$t'];
+            
             return false;
         }
     });
