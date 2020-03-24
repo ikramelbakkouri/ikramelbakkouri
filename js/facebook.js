@@ -1,10 +1,18 @@
 function statusChangeCallback(response) {
     if (response.status === 'connected') {
         console.log(response);
-      } else if (response.status === 'not_authorized') {
-        console.log('not connected to app');
       } else {
-        console.log('not logged in to fb');
+        console.log('not logged');
+
+        FB.login(function(response) {
+          if (response.status === 'connected') {
+            // Logged into your webpage and Facebook.
+            console.log('logged');
+          } else {
+            // The person is not logged into your webpage or we are unable to tell. 
+            console.log('unable to log');
+          }
+        }, {scope: 'public_profile,email'});
       }
 }
 
@@ -24,14 +32,6 @@ window.fbAsyncInit = function() {
         statusChangeCallback(response);
     });
   };
-
-  
-
-  function Login() {
-    FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-    });
-}
 
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
