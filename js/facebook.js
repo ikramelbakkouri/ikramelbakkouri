@@ -2,9 +2,7 @@ function statusChangeCallback(response) {
   console.log('statusChangeCallback');
   console.log(response);
   if (response.status === 'connected') {
-    console.log('logged');
-  } else {
-    console.log('unable to log');
+    window.location.href = "https://ikramelbakkouri.github.io/ikramelbakkouri/results.html";
   }
 }
 
