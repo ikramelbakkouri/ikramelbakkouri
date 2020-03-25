@@ -1,17 +1,8 @@
 function statusChangeCallback(response) {
-  console.log('statusChangeCallback');
-  console.log(response);
   if (response.status === 'connected') {
     window.location.href = "https://ikramelbakkouri.github.io/ikramelbakkouri/results.html";
   }
 }
-
-function checkLoginState() {
-  FB.getLoginStatus(function (response) {
-    statusChangeCallback(response);
-  });
-}
-
 
 window.fbAsyncInit = function () {
   FB.init({
