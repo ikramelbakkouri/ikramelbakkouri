@@ -78,7 +78,8 @@ function statusChangeCallback(response) {
 
 function getInfo() {
     FB.api('/me', 'GET', {fields: 'name,picture.width(150).height(150)'}, function(response) {
-        console.log(response);        
+        console.log(response);
+        $(".user-picture").attr("src", response.picture.data.url);
     });   
 }
 
